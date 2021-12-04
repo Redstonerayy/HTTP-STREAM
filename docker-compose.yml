@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  rtmp:
+    build: ./rtmp
+    ports:
+      - "8080:8080"
+      - "1935:1935"
+    #volumes:
+    #  - "<host-mount-dir>\\dock:/tmp/hls"
+    container_name: rtmp_server
+  auth:
+    build: ./auth
+    container_name: auth_server
